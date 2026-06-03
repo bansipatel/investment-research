@@ -3,127 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bansi Patel — Investment Research</title>
+  <title>Bansi Patel, CFA — Investment Research</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: #f7f7f5;
+      background: #f4f4f2;
       color: #1a1a1a;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* ── Header ── */
     header {
       background: #0f1f3d;
       color: #fff;
-      padding: 48px 64px 40px;
+      padding: 52px 64px 44px;
     }
 
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 600;
       letter-spacing: 0.01em;
       margin-bottom: 6px;
     }
 
     header p {
-      font-size: 0.9rem;
-      color: #8a9bbf;
-      letter-spacing: 0.04em;
+      font-size: 0.82rem;
+      color: #7a8fb5;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
+    /* ── Main ── */
     main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 56px 32px;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    section h2 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #e0e0dc;
-    }
-
-    table {
+      flex: 1;
+      max-width: 860px;
       width: 100%;
-      border-collapse: collapse;
+      margin: 0 auto;
+      padding: 52px 32px 40px;
     }
 
-    thead th {
-      text-align: left;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #aaa;
-      padding: 0 12px 10px 0;
+      color: #999;
+      margin-bottom: 14px;
     }
 
-    tbody tr {
-      border-top: 1px solid #e8e8e4;
+    /* ── Company card ── */
+    .company-card {
+      background: #fff;
+      border: 1px solid #e4e4e0;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: #fff;
+      border-bottom: 1px solid #ececea;
+    }
+
+    .ticker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #fff;
+      background: #0f1f3d;
+      padding: 4px 9px;
+      border-radius: 4px;
+    }
+
+    .company-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .company-date {
+      margin-left: auto;
+      font-size: 0.78rem;
+      color: #aaa;
+    }
+
+    /* ── Document rows ── */
+    .doc-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-top: 1px solid #f0f0ee;
       transition: background 0.1s;
     }
 
-    tbody tr:hover {
-      background: #eeeee9;
+    .doc-row:hover {
+      background: #f9f9f7;
     }
 
-    tbody td {
-      padding: 14px 12px 14px 0;
-      font-size: 0.9rem;
-      vertical-align: middle;
+    .doc-type {
+      font-size: 0.85rem;
+      color: #444;
+      flex: 1;
     }
 
-    td.date { color: #888; font-size: 0.82rem; white-space: nowrap; width: 110px; }
-    td.ticker { font-weight: 600; width: 90px; }
-    td.name { color: #333; }
-
-    td.action { text-align: right; white-space: nowrap; width: 80px; }
-
-    td.action a {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
+    .doc-row a {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       color: #0f1f3d;
       text-decoration: none;
       border: 1px solid #c8c8c0;
       border-radius: 4px;
-      padding: 5px 12px;
+      padding: 5px 14px;
       transition: all 0.15s;
     }
 
-    td.action a:hover {
+    .doc-row a:hover {
       background: #0f1f3d;
       border-color: #0f1f3d;
       color: #fff;
     }
 
-    footer {
-      text-align: center;
-      padding: 32px;
-      font-size: 0.75rem;
-      color: #aaa;
-      border-top: 1px solid #e0e0dc;
-      letter-spacing: 0.04em;
+    section {
+      margin-bottom: 48px;
     }
 
     .empty {
       font-size: 0.85rem;
       color: #bbb;
-      padding: 24px 0;
       font-style: italic;
+      padding: 20px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 32px;
+      font-size: 0.73rem;
+      color: #bbb;
+      letter-spacing: 0.04em;
+      border-top: 1px solid #e4e4e0;
+      background: #fff;
     }
   </style>
 </head>
@@ -131,95 +161,63 @@
 
   <header>
     <h1>Investment Research</h1>
-    <p>Bansi Patel</p>
+    <p>Bansi Patel, CFA</p>
   </header>
 
   <main>
 
     <section>
-      <h2>Equity Pitches</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Ticker</th>
-            <th>Company</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+      <p class="section-label">Equity Pitches</p>
 
-          <!-- To add a report, copy the block below, fill in the fields, and save.
-               File path example: Equity Pitches/AAPL_2026-06-03.pdf
-          <tr>
-            <td class="date">2026-06-03</td>
-            <td class="ticker">AAPL</td>
-            <td class="name">Apple Inc.</td>
-            <td class="action"><a href="Equity Pitches/AAPL_2026-06-03.pdf" target="_blank">View</a></td>
-          </tr>
-          -->
+      <!-- OKTA -->
+      <div class="company-card">
+        <div class="company-header">
+          <span class="ticker">OKTA</span>
+          <span class="company-name">Okta, Inc.</span>
+          <span class="company-date">Jun 2026</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-type">Equity Pitch</span>
+          <a href="Equity%20Pitches/Okta%20Pitch%20-%20Bansi%20Patel.pdf" target="_blank">View</a>
+        </div>
+        <div class="doc-row">
+          <span class="doc-type">DCF</span>
+          <a href="Equity%20Pitches/Okta%20DCF%20-%20Bansi%20Patel.pdf" target="_blank">View</a>
+        </div>
+      </div>
 
-          <tr>
-            <td class="date">2026-06-03</td>
-            <td class="ticker">Okta</td>
-            <td class="name">Equity Pitch</td>
-            <td class="action"><a href="Equity%20Pitches/Okta%20Pitch%20-%20Bansi%20Patel.pdf" target="_blank">View</a></td>
-          </tr>
-          <tr>
-            <td class="date">2026-06-03</td>
-            <td class="ticker">Okta</td>
-            <td class="name">DCF</td>
-            <td class="action"><a href="Equity%20Pitches/Okta%20DCF%20-%20Bansi%20Patel.pdf" target="_blank">View</a></td>
-          </tr>
+      <!-- Add new equity company cards above this line -->
 
-        </tbody>
-      </table>
     </section>
 
     <section>
-      <h2>Credit Pitches</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Issuer</th>
-            <th>Name</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+      <p class="section-label">Credit Pitches</p>
 
-          <!-- To add a report, copy the block below, fill in the fields, and save.
-               File path example: Credit Pitches/XYZ_2026-06-03.pdf
-          <tr>
-            <td class="date">2026-06-03</td>
-            <td class="ticker">XYZ Corp</td>
-            <td class="name">Senior Secured Notes Due 2030</td>
-            <td class="action"><a href="Credit Pitches/XYZ_2026-06-03.pdf" target="_blank">View</a></td>
-          </tr>
-          -->
+      <!-- EMBC -->
+      <div class="company-card">
+        <div class="company-header">
+          <span class="ticker">EMBC</span>
+          <span class="company-name">Embecta Corp</span>
+          <span class="company-date">Jun 2026</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-type">Credit Memo</span>
+          <a href="Credit%20Pitches/EMBC%20Credit%20Credit%20Memo%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">View</a>
+        </div>
+        <div class="doc-row">
+          <span class="doc-type">Credit Review</span>
+          <a href="Credit%20Pitches/Embecta%20Corp%20Credit%20Review%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">View</a>
+        </div>
+      </div>
 
-          <tr>
-            <td class="date">2026-06-03</td>
-            <td class="ticker">EMBC</td>
-            <td class="name">Credit Memo</td>
-            <td class="action"><a href="Credit%20Pitches/EMBC%20Credit%20Credit%20Memo%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">View</a></td>
-          </tr>
-          <tr>
-            <td class="date">2026-06-03</td>
-            <td class="ticker">EMBC</td>
-            <td class="name">Credit Review</td>
-            <td class="action"><a href="Credit%20Pitches/Embecta%20Corp%20Credit%20Review%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">View</a></td>
-          </tr>
+      <!-- Add new credit company cards above this line -->
 
-        </tbody>
-      </table>
     </section>
 
   </main>
 
   <footer>
-    <p>© 2026 Bansi Patel, CFA &nbsp;|&nbsp; Not for Redistribution</p>
+    © 2026 Bansi Patel, CFA &nbsp;|&nbsp; Not for Redistribution
   </footer>
 
 </body>
