@@ -223,42 +223,73 @@
       color: #96A8A5;
     }
 
-    /* Card footer */
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 24px;
-      padding-top: 16px;
+    /* Card docs section */
+    .card-docs {
+      margin-top: 20px;
       border-top: 1px solid var(--border);
     }
 
     .card-date {
       font-family: "DM Mono", monospace;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 500;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--muted);
+      padding: 10px 0 6px;
     }
 
-    .card-links {
+    .doc-row {
       display: flex;
-      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      margin: 0 -12px;
+      border-radius: 2px;
+      transition: background 0.12s;
+      cursor: pointer;
     }
 
-    .card-links a {
-      font-family: "DM Mono", monospace;
-      font-size: 0.62rem;
+    .doc-row:hover { background: rgba(255,255,255,0.04); }
+
+    .doc-row-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .doc-icon {
+      font-size: 0.75rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .doc-name {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.84rem;
       font-weight: 500;
-      letter-spacing: 0.07em;
+      color: var(--text);
+    }
+
+    .doc-open {
+      font-family: "DM Mono", monospace;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.15s;
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 2px;
+      transition: all 0.15s;
+      white-space: nowrap;
     }
 
-    .card-links a:hover { color: var(--gold); }
+    .doc-open:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
 
     /* ── Footer ── */
     footer {
@@ -322,11 +353,21 @@
           <p class="card-type">Long Equity · Buyside Pitch</p>
           <p class="thesis">Market misprices Okta as a low-growth identity vendor losing share to Microsoft. Correct framework expands TAM to include non-human identities driven by AI agent deployment. Base case $98.97 (+57%) vs. current $62.93.</p>
         </div>
-        <div class="card-footer">
-          <span class="card-date">Apr 2026</span>
-          <div class="card-links">
-            <a href="Equity%20Pitches/Okta%20Pitch%20-%20Bansi%20Patel.pdf" target="_blank">Equity Pitch ↗</a>
-            <a href="Equity%20Pitches/Okta%20DCF%20-%20Bansi%20Patel.pdf" target="_blank">DCF ↗</a>
+        <div class="card-docs">
+          <div class="card-date">Apr 2026</div>
+          <div class="doc-row">
+            <div class="doc-row-left">
+              <span class="doc-icon">PDF</span>
+              <span class="doc-name">Equity Pitch</span>
+            </div>
+            <a class="doc-open" href="Equity%20Pitches/Okta%20Pitch%20-%20Bansi%20Patel.pdf" target="_blank">Open ↗</a>
+          </div>
+          <div class="doc-row">
+            <div class="doc-row-left">
+              <span class="doc-icon">PDF</span>
+              <span class="doc-name">DCF</span>
+            </div>
+            <a class="doc-open" href="Equity%20Pitches/Okta%20DCF%20-%20Bansi%20Patel.pdf" target="_blank">Open ↗</a>
           </div>
         </div>
       </div>
@@ -342,11 +383,21 @@
           <p class="card-type">Credit Pitch · IC Memo</p>
           <p class="thesis">BD spinoff trading at distressed multiples with durable FCF generation. Thesis centers on cash flow durability through a sticky installed base and a deleveraging pathway via working capital normalization.</p>
         </div>
-        <div class="card-footer">
-          <span class="card-date">May 2026</span>
-          <div class="card-links">
-            <a href="Credit%20Pitches/EMBC%20Credit%20Credit%20Memo%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">Credit Memo ↗</a>
-            <a href="Credit%20Pitches/Embecta%20Corp%20Credit%20Review%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">Credit Review ↗</a>
+        <div class="card-docs">
+          <div class="card-date">May 2026</div>
+          <div class="doc-row">
+            <div class="doc-row-left">
+              <span class="doc-icon">PDF</span>
+              <span class="doc-name">Credit Memo</span>
+            </div>
+            <a class="doc-open" href="Credit%20Pitches/EMBC%20Credit%20Credit%20Memo%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">Open ↗</a>
+          </div>
+          <div class="doc-row">
+            <div class="doc-row-left">
+              <span class="doc-icon">PDF</span>
+              <span class="doc-name">Credit Review</span>
+            </div>
+            <a class="doc-open" href="Credit%20Pitches/Embecta%20Corp%20Credit%20Review%20-%20Bansi%20Patel%20-%20Updated.pdf" target="_blank">Open ↗</a>
           </div>
         </div>
       </div>
